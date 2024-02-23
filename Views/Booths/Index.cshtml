@@ -1,0 +1,13 @@
+@{
+    ViewData["Title"] = "Booths";
+}
+
+<h1>All Photo Booths:</h1>
+
+<ol>
+@foreach (Booth booth in Model)
+{
+  <li><strong>@booth.Location</strong> <a href="/Booths/Details/@(booth.BoothId)">View Details</a></li>
+}
+</ol>
+
