@@ -2,12 +2,16 @@
     ViewData["Title"] = "Booths";
 }
 
-<h1>All Photo Booths:</h1>
+<h1>All Photo Booths</h1>
 
+<h3>Actions:</h3>
+
+<p>@Html.ActionLink("Add a new photo booth to the park", "Create")</p>
+
+<h3>Photo Booths:</h3>
 <ol>
 @foreach (Booth booth in Model)
 {
-  <li><strong>@booth.Location</strong> <a href="/Booths/Details/@(booth.BoothId)">View Details</a></li>
+  <li><strong>@booth.Location</strong> | <a href="/Booths/Details/@(booth.BoothId)">View Details</a></li>
 }
 </ol>
-

@@ -39,5 +39,11 @@ namespace PhotoBooth.Models
 
       return booth;
     }
+
+    public static void Post(Booth booth)
+    {
+      string jsonBooth = JsonConvert.SerializeObject(booth);
+      ApiHelper.Post(jsonBooth);
+    }
   }
 }

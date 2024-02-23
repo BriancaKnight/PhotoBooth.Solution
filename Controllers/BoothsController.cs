@@ -16,4 +16,16 @@ public class BoothsController : Controller
     Booth booth = Booth.GetDetails(id);
     return View(booth);
   }
+
+  public ActionResult Create()
+  {
+    return View();
+  }
+
+  [HttpPost]
+  public ActionResult Create(Booth booth)
+  {
+    Booth.Post(booth);
+    return RedirectToAction("Index");
+  }
 }
