@@ -9,4 +9,5 @@
 <p>Type of booth: @Model.Type</p>
 <p>Film Color: @Model.Color</p>
 
+<p>@Html.ActionLink("Edit details", "Edit", new { id = @Model.BoothId })</p>
 @Html.ActionLink("Return to all photo booths", "Index")

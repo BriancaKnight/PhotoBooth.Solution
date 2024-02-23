@@ -28,4 +28,17 @@ public class BoothsController : Controller
     Booth.Post(booth);
     return RedirectToAction("Index");
   }
+
+  public ActionResult Edit(int id)
+  {
+    Booth booth = Booth.GetDetails(id);
+    return View(booth);
+  }
+
+  [HttpPost]
+  public ActionResult Edit(Booth booth)
+  {
+    Booth.Put(booth);
+    return RedirectToAction("Details", new { id = booth.BoothId});
+  }
 }

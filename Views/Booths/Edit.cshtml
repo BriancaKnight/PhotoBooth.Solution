@@ -1,0 +1,33 @@
+@{
+  ViewData["Title"] = $"Edit {Model.Location}";
+}
+
+@model PhotoBooth.Models.Booth
+
+<h4>Edit @Model.Location</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.BoothId)
+
+  @Html.LabelFor(model => model.Location)
+  @Html.TextBoxFor(model => model.Location)
+  <br />
+  @Html.LabelFor(model => model.Address)
+  @Html.TextBoxFor(model => model.Address)
+  <br />
+  @Html.LabelFor(model => model.Neighborhood)
+  @Html.TextBoxFor(model => model.Neighborhood)
+  <br />
+  @Html.LabelFor(model => model.Type)
+  @Html.TextBoxFor(model => model.Type)
+  <br />
+  @Html.LabelFor(model => model.Color)
+  @Html.TextBoxFor(model => model.Color)
+  <br />
+  <br />
+  <input type="submit" value="Edit booth" class="btn btn-primary"/>
+}
+
+<br />
+<p>@Html.ActionLink("Back to details", "Details", new {id = @Model.BoothId})</p>

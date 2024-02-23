@@ -45,5 +45,11 @@ namespace PhotoBooth.Models
       string jsonBooth = JsonConvert.SerializeObject(booth);
       ApiHelper.Post(jsonBooth);
     }
+
+    public static void Put(Booth booth)
+    {
+      string jsonBooth = JsonConvert.SerializeObject(booth);
+      ApiHelper.Put(booth.BoothId, jsonBooth);
+    }
   }
 }

@@ -29,5 +29,14 @@ namespace PhotoBooth.Models
       request.AddJsonBody(newBooth);
       await client.PostAsync(request);
     }
+
+    public static async void Put(int id, string newBooth)
+    {
+      RestClient client = new RestClient("http://localhost:5001/");
+      RestRequest request = new RestRequest($"api/booths/{id}", Method.Put);
+      request.AddHeader("Content-Type", "application/json");
+      request.AddJsonBody(newBooth);
+      await client.PutAsync(request);
+    }
   }
 }
