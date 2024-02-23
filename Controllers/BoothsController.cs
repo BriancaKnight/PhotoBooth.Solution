@@ -10,4 +10,10 @@ public class BoothsController : Controller
     List<Booth> booths = Booth.GetBooths();
     return View(booths);
   }
+
+  public IActionResult Details(int id)
+  {
+    Booth booth = Booth.GetDetails(id);
+    return View(booth);
+  }
 }

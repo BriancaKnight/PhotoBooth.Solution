@@ -1,0 +1,12 @@
+@{
+  ViewData["Title"] = $"Details for {Model.Location}";
+}
+
+<h1>All About @Model.Location</h1>
+
+<p>Address: @Model.Address</p>
+<p>Neighborhood: @Model.Neighborhood</p>
+<p>Type of booth: @Model.Type</p>
+<p>Film Color: @Model.Color</p>
+
+@Html.ActionLink("Return to all photo booths", "Index")

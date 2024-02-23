@@ -29,6 +29,15 @@ namespace PhotoBooth.Models
       return boothList;
     }
 
-    
+    public static Booth GetDetails(int id)
+    {
+      var apiCallTask = ApiHelper.Get(id);
+      var result = apiCallTask.Result;
+
+      JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
+      Booth booth = JsonConvert.DeserializeObject<Booth>(jsonResponse.ToString());
+
+      return booth;
+    }
   }
 }
