@@ -41,4 +41,17 @@ public class BoothsController : Controller
     Booth.Put(booth);
     return RedirectToAction("Details", new { id = booth.BoothId});
   }
+
+  public ActionResult Delete(int id)
+  {
+    Booth booth = Booth.GetDetails(id);
+    return View(booth);
+  }
+
+  [HttpPost, ActionName("Delete")]
+  public ActionResult DeleteConfirmed(int id)
+  {
+    Booth.Delete(id);
+    return RedirectToAction("Index", "Home");
+  }
 }

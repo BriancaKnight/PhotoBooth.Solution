@@ -51,5 +51,10 @@ namespace PhotoBooth.Models
       string jsonBooth = JsonConvert.SerializeObject(booth);
       ApiHelper.Put(booth.BoothId, jsonBooth);
     }
+
+    public static void Delete(int id)
+    {
+      ApiHelper.Delete(id);
+    }
   }
 }
